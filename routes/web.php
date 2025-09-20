@@ -21,8 +21,6 @@ Route::middleware('guest')->group(function () {
     // the login routes
     Route::get('/', [AuthController::class, 'login']);
 
-
-
     // logging in
     Route::get('/login', [AuthController::class, 'login'])->name('cookmates.login');
     Route::post('/login', [AuthController::class, 'authenticate']);
@@ -37,7 +35,7 @@ Route::middleware('auth')->group(function () {
 
     // registration
     Route::get('/admins/register', [AuthController::class, 'register'])->name('admins.register');
-    Route::post('/admins', [AuthController::class, 'store']);
+    Route::post('/admins', [AuthController::class, 'store'])->name('admins.store');
 
     // recipes dashboard
     Route::get('/cookmates', [DashboardController::class, 'index'])->name('cookmates.index');

@@ -18,13 +18,12 @@
                 <img src="{{ asset('assets/recipe/imgs/logo.png') }}" alt="CookMate" class="logo" />
                 <h1 class="heading-primary">Add New Admin</h1>
             </div>
-            <form id="MainForm" class="login-form" action="{{ route('admins.register') }}" method="post">
+            <form id="MainForm" class="login-form" action="{{ route('admins.store') }}" method="POST">
                 @csrf
 
                 <div class="form-group">
                     <i class="far fa-user-circle"></i>
-                    <input type="text" name="name" id="nameInp" class="form-input" placeholder="Name"
-                        required />
+                    <input type="text" name="name" id="nameInp" placeholder="Name" required  value="{{ old('name') }}"/>
                 </div>
                 @error('name')
                     <span class="error-message" id="nameError">{{ $message }}</span>
@@ -32,8 +31,7 @@
 
                 <div class="form-group">
                     <i class="fa-solid fa-envelope"></i>
-                    <input type="email" name="email" id="emailInp" class="form-input" placeholder="Email"
-                        required />
+                    <input type="email" name="email" id="emailInp" placeholder="Email" required value="{{ old('email') }}"/>
                 </div>
                 @error('email')
                     <span class="error-message" id="emailError">{{ $message }}</span>
@@ -41,8 +39,7 @@
 
                 <div class="form-group">
                     <i class="fa-solid fa-lock"></i>
-                    <input type="password" name="password" id="passwordInp" class="form-input" placeholder="Password"
-                        required />
+                    <input type="password" name="password" id="passwordInp" placeholder="Password" required />
                 </div>
                 @error('password')
                     <span class="error-message" id="passwordError">{{ $message }}</span>
@@ -50,7 +47,7 @@
 
                 <div class="form-group">
                     <i class="fa-solid fa-lock"></i>
-                    <input type="password" name="password_confirmation" id="confirm-password" class="form-input"
+                    <input type="password" name="password_confirmation" id="confirm-password"
                         placeholder="Confirm Password" required />
                 </div>
                 @error('password')
@@ -58,7 +55,8 @@
                 @enderror
 
                 <button type="submit" class="login-button">Add</button>
-                <a href="{{ route('cookmates.home') }}" class="back-button" style="text-align: center">Back to CookMates</a>
+                <a href="{{ route('cookmates.home') }}" class="back-button" style="text-align: center">Back to
+                    CookMates</a>
             </form>
         </div>
     </main>

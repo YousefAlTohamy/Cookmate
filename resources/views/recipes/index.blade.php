@@ -26,11 +26,11 @@
 
 
                         <div class="actions">
-                            <a href="{{ route('cookmates.show', $recipe->id) }}" class="add-row-btn btn btn-primary">Show
+                            <a href="{{ route('cookmates.show', $recipe->id) }}" class="add-row-btn">Show
                                 Recipe</a>
 
                             <a href="#" onclick="confirmDelete({{ $recipe->id }})"
-                                class="delete-btn btn btn-primary">Delete</a>
+                                class="delete-btn">Delete</a>
 
                             <form id="delete-form-{{ $recipe->id }}"
                                 action="{{ route('cookmates.destroy', $recipe->id) }}" method="POST" style="display:none;">

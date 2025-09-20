@@ -59,12 +59,12 @@
             </div>
 
             <div class="text-left">
-                <h1><span class="highlight-blue">{{ config('app.name') }}</span>.. your perfect plate</h1>
+                <h1><span class="highlight">{{ config('app.name') }}</span>.. your perfect plate</h1>
                 <p>We bring you the fastest and easiest way to find recipes you love</p>
             </div>
             <div class="text-right">
-                <h1>Begin with a <span class="highlight-blue">click</span> ,end with a <span
-                        class="highlight-blue">dish</span></h1>
+                <h1>Begin with a <span class="highlight">click</span> ,end with a <span
+                        class="highlight">dish</span></h1>
                 <p>Choose your flavor and get ready for greatness.</p>
             </div>
 
@@ -84,7 +84,6 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     @include('layouts.swalFire')
 </body>

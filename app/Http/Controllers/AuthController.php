@@ -22,12 +22,12 @@ class AuthController extends Controller
      */
     public function store(RegisterRequest $request)
     {
-
+        $credentials = $request->only('name', 'email', 'password');
         User::create(
             [
-                'name' => $request['name'],
-                'email' => $request['email'],
-                'password' => Hash::make($request['password'])
+                'name' => $credentials['name'],
+                'email' => $credentials['email'],
+                'password' => Hash::make($credentials['password'])
             ]
         );
 
@@ -53,7 +53,7 @@ class AuthController extends Controller
             return redirect()->route('cookmates.home')->with('login-success', 'Logged in successfully');
         }
 
-        return redirect()->route('cookmates.login')->with('login-failed', 'Invalid Email Or Password');
+        return redirect()->route('cookmates.login')->withInput()->with('login-failed', 'Invalid Email Or Password');
     }
 
     /**

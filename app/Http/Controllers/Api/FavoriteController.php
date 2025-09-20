@@ -29,8 +29,7 @@ class FavoriteController extends Controller
 
         $favorite->load('recipe:id,title,ingredients,steps');
 
-        return (new FavoriteResource($favorite))
-            ->response();
+        return (new FavoriteResource($favorite))->response();
     }
 
     public function destroy(string $deviceId, Recipe $recipe): JsonResponse

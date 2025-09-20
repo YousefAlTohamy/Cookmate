@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="{{ asset('assets/recipe/css/login.css') }}" />
     <link rel="icon" href="{{ asset('assets/recipe/imgs/icon.png') }}" />
     <script src="https://kit.fontawesome.com/718cceb512.js" crossorigin="anonymous"></script>
-    <title>CookMate | Admin Log In</title>
+    <title>{{ config('app.name') }} | Admin Log In</title>
 </head>
 
 <body>
@@ -24,7 +24,7 @@
                 @csrf
                 <div class="form-group">
                     <i class="fa-solid fa-envelope"></i>
-                    <input type="email" name="email" id="emailInp" class="form-input" placeholder="Email"
+                    <input type="email" name="email" id="emailInp" placeholder="Email" value="{{ old('email') }}"
                         required />
                 </div>
                 @error('email')
@@ -34,7 +34,7 @@
 
                 <div class="form-group">
                     <i class="fa-solid fa-lock"></i>
-                    <input type="password" name="password" id="passwordInp" class="form-input" placeholder="Password"
+                    <input type="password" name="password" id="passwordInp" placeholder="Password"
                         required />
                 </div>
                 @error('password')

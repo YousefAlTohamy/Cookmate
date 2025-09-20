@@ -14,7 +14,7 @@ class FavoriteRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'device_id' => ['required', 'string', 'max:191'],
+            'device_id' => ['required', 'string', 'max:200'],
             'recipe_id' => ['required', 'integer', 'exists:recipes,id'],
         ];
     }
